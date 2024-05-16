@@ -1,10 +1,20 @@
 let num = 1001;
 
-//Returns 'undefined'.
-console.log(num.length);
+console.log(num.length); // Prints undefined because num is an integer and does not have a length property.
 
-//Use type conversion to print the length (number of digits) of an integer.
+if (String(num).includes('.')) {
+  console.log(String(num).replace('.', '').length); // If num were a decimal, this would print the number of digits excluding the decimal point.
+} else {
+  console.log(String(num).length); // Prints the number of digits in the integer num.
+}
 
-//Follow up: Print the number of digits in a DECIMAL value (e.g. num = 123.45 has 5 digits but a length of 6).
+let decimalNum = 123.45;
+console.log(String(decimalNum).replace('.', '').length); // Prints the number of digits in the decimal number excluding the decimal point.
 
-//Experiment! What if num could be EITHER an integer or a decimal?  Add an if/else statement so your code can handle both cases.
+let num2 = 123.45;
+
+if (String(num2).includes('.')) {
+  console.log(String(num2).replace('.', '').length); // Prints the number of digits in the decimal number excluding the decimal point.
+} else {
+  console.log(String(num2).length); // Prints the number of digits in the integer num2.
+}
