@@ -1,32 +1,44 @@
-//Part Two Section One
+// Part Two Section One
 
 let dna = " TCG-TAC-gaC-TAC-CGT-CAG-ACT-TAa-CcA-GTC-cAt-AGA-GCT    ";
 
-// First, print out the dna strand in it's current state.
+// First, print out the dna strand in its current state.
+console.log(dna); // Prints the original dna strand with leading and trailing whitespace and mixed case.
 
-//1) Use the .trim() method to remove the leading and trailing whitespace, then print the result.
+// 1) Use the .trim() method to remove the leading and trailing whitespace, then print the result.
+dna = dna.trim();
+console.log(dna); // Prints the dna strand with no leading or trailing whitespace.
 
-console.log(/* Your code here. */);
+// 2) Change all of the letters in the dna string to UPPERCASE, then print the result.
+dna = dna.toUpperCase();
+console.log(dna); // Prints the dna strand in UPPERCASE.
 
-//2) Change all of the letters in the dna string to UPPERCASE, then print the result.
+// 3) Note that after applying the methods above, the original, flawed string is still stored in dna. To fix this, we need to reassign the changes to back to dna.
+// Apply these fixes to your code so that console.log(dna) prints the DNA strand in UPPERCASE with no whitespace.
+console.log(dna); // Prints the dna strand in UPPERCASE with no whitespace.
 
-console.log();
-
-//3) Note that after applying the methods above, the original, flawed string is still stored in dna. To fix this, we need to reassign the changes to back to dna.
-//Apply these fixes to your code so that console.log(dna) prints the DNA strand in UPPERCASE with no whitespace.
-
-console.log(dna);
-
-//Part Two Section Two
+// Part Two Section Two
 
 let dnaTwo = "TCG-TAC-GAC-TAC-CGT-CAG-ACT-TAA-CCA-GTC-CAT-AGA-GCT";
 
-//1) Replace the gene "GCT" with "AGG", and then print the altered strand.
+// 1) Replace the gene "GCT" with "AGG", and then print the altered strand.
+dnaTwo = dnaTwo.replace("GCT", "AGG");
+console.log(dnaTwo); // Prints the altered dnaTwo strand with "GCT" replaced by "AGG".
 
-//2) Look for the gene "CAT" with ``indexOf()``. If found print, "CAT gene found", otherwise print, "CAT gene NOT found".
+// 2) Look for the gene "CAT" with indexOf(). If found, print "CAT gene found", otherwise print "CAT gene NOT found".
+if (dnaTwo.indexOf("CAT") !== -1) {
+  console.log("CAT gene found");
+} else {
+  console.log("CAT gene NOT found");
+}
 
-//3) Use .slice() to print out the fifth gene (set of 3 characters) from the DNA strand.
+// 3) Use .slice() to print out the fifth gene (set of 3 characters) from the DNA strand.
+let fifthGene = dnaTwo.slice(16, 19);
+console.log(fifthGene); // Prints the fifth gene "CGT".
 
-//4) Use a template literal to print, "The DNA strand is ___ characters long."
+// 4) Use a template literal to print, "The DNA strand is ___ characters long."
+console.log(`The DNA strand is ${dnaTwo.length} characters long.`);
 
-//5) Just for fun, apply methods to ``dna`` and use another template literal to print, 'taco cat'.
+// 5) Just for fun, apply methods to dna and use another template literal to print, 'taco cat'.
+let tacoCat = dna.toLowerCase().slice(4, 8) + " " + dna.toLowerCase().slice(24, 27);
+console.log(`Just for fun: ${tacoCat}`); // Prints 'taco cat'.
